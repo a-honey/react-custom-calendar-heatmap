@@ -8,4 +8,5 @@ export interface CustomCalendarHeatmapProps {
   endDate: Date;
   values: HeatMapElementProps[];
   gap?: number;
+  depth?: number;
 }
