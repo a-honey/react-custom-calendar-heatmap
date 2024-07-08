@@ -1,17 +1,24 @@
 import HeatMapElement from "./HeatMapElement";
-import { HeatMapProps } from "types";
+import { HeatMapProps } from "../../types";
 import React from "react";
-import getGradientColor from "utils/getGradientColor";
-import getMaxValue from "utils/getMaxValue";
+import getGradientColor from "../../utils/getGradientColor";
+import getMaxValue from "../../utils/getMaxValue";
 
 const HeatMap = ({
   values,
   depth = 5,
   gap = 2,
+  row,
   SvgComponent,
 }: HeatMapProps) => {
   return (
-    <div style={{ flex: "grid", gap: `${gap}px` }}>
+    <div
+      style={{
+        flex: "grid",
+        gridTemplateRows: `repeat(${row}, 1fr)`,
+        gap: `${gap}px`,
+      }}
+    >
       {values.map(({ value, hoverValue }, index) => (
         <HeatMapElement
           key={index}

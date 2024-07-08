@@ -1,5 +1,5 @@
 interface getGradientColorProps {
-  value: number;
+  value: number | null;
   maxValue: number;
   depth: number;
 }
@@ -9,21 +9,23 @@ export default function getGradientColor({
   depth,
   maxValue,
 }: getGradientColorProps) {
+  if (!value) return "#ccd6e3";
+
   const depthSize = maxValue / depth;
   const currentDepth = Math.floor(value / depthSize);
 
   switch (currentDepth) {
     case 0:
-      return "#808080";
+      return "#ccd6e3";
     case 1:
-      return "#A0A0A0";
+      return "#fdddb8";
     case 2:
-      return "#C0C0C0";
+      return "#ffc07f";
     case 3:
-      return "#E0E0E0";
+      return "#ff7a35";
     case 4:
       return "#00FF00";
     default:
-      return "#FFFFFF";
+      return "#ccd6e3";
   }
 }

@@ -5,13 +5,14 @@ export interface SVGComponentProps extends React.SVGProps<SVGSVGElement> {
 
 export interface HeatMapElementProps {
   hoverValue?: string;
-  value: number;
+  value: number | null;
 }
 export interface HeatMapProps {
+  style?: React.CSSProperties;
   SvgComponent?: React.FC<SVGComponentProps>;
-  startRange: number;
-  endRange: number;
   values: HeatMapElementProps[];
   gap?: number;
   depth?: number;
+  col?: number;
+  row?: number;
 }

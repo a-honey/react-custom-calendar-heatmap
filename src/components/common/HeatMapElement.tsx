@@ -1,6 +1,6 @@
-import { HeatMapElementProps, SVGComponentProps } from "types";
+import { HeatMapElementProps, SVGComponentProps } from "../../types";
 
-import DefaultElement from "assets/DefaultElement";
+import DefaultElement from "../../assets/DefaultElement";
 import React from "react";
 
 interface ElementProps extends HeatMapElementProps {
