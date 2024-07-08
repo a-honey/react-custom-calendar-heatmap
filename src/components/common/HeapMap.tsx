@@ -1,21 +1,23 @@
-import { CustomCalendarHeatmapProps } from "types";
 import HeatMapElement from "./HeatMapElement";
+import { HeatMapProps } from "types";
 import React from "react";
 import getGradientColor from "utils/getGradientColor";
 import getMaxValue from "utils/getMaxValue";
 
-interface HeatMapProps extends CustomCalendarHeatmapProps {
-  SVGElement?: JSX.Element;
-}
-
-const HeatMap = ({ values, depth = 5 }: HeatMapProps) => {
+const HeatMap = ({
+  values,
+  depth = 5,
+  gap = 2,
+  SvgComponent,
+}: HeatMapProps) => {
   return (
-    <div>
-      {values.map(({ value, date }, index) => (
+    <div style={{ flex: "grid", gap: `${gap}px` }}>
+      {values.map(({ value, hoverValue }, index) => (
         <HeatMapElement
           key={index}
-          date={date}
+          hoverValue={hoverValue}
           value={value}
+          SvgComponent={SvgComponent}
           color={getGradientColor({
             value,
             depth,

@@ -1,14 +1,11 @@
 import React from "react";
-
-interface DefaultElementProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-}
+import { SVGComponentProps } from "types";
 
 const DefaultElement = ({
   size = 20,
   fill = "#CCCCCC",
   ...props
-}: DefaultElementProps) => {
+}: SVGComponentProps) => {
   return (
     <svg
       width={size}
