@@ -1,5 +1,6 @@
 import DefaultElement from "assets/DefaultElement";
 import { HeatMapElementProps } from "types";
+import React from "react";
 
 const HeatMap = ({
   values,
