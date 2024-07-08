@@ -1,8 +1,6 @@
-import { CustomCalendarHeatmapProps } from "types";
+import { HeatMapProps } from "types";
 
-export default function getMaxValue({
-  values,
-}: Pick<CustomCalendarHeatmapProps, "values">) {
+export default function getMaxValue({ values }: Pick<HeatMapProps, "values">) {
   if (values.length === 0) return 0;
 
   const maxValueElement = values.reduce(

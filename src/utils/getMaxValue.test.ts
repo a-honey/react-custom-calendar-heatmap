@@ -3,11 +3,7 @@ import getMaxValue from "./getMaxValue";
 
 describe("getMaxValue function test start", () => {
   it("should return the maximum value from values array", () => {
-    const values = [
-      { value: 10, date: new Date() },
-      { value: 20, date: new Date() },
-      { value: 15, date: new Date() },
-    ];
+    const values = [{ value: 10 }, { value: 20 }, { value: 15 }];
 
     const maxValue = getMaxValue({ values });
 

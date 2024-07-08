@@ -1,13 +1,7 @@
-import { CustomCalendarHeatmapProps } from "types";
-import HeatMap from "components/common/Heatmap";
 import React from "react";
 
-const CustomCalendarHeatMap = ({ values }: CustomCalendarHeatmapProps) => {
-  return (
-    <div>
-      <HeatMap values={values} />
-    </div>
-  );
+const CustomCalendarHeatMap = () => {
+  return <div>임시</div>;
 };
 
 export default CustomCalendarHeatMap;

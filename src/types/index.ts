@@ -4,7 +4,7 @@ export interface SVGComponentProps extends React.SVGProps<SVGSVGElement> {
 }
 
 export interface HeatMapElementProps {
-  hoverValue: string;
+  hoverValue?: string;
   value: number;
 }
 export interface HeatMapProps {
