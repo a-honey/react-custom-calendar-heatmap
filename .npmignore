@@ -1,0 +1,5 @@
+# ignore all files
+**/*
+
+# deploy just build file(dist)
+!/dist/**
