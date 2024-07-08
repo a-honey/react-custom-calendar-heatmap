@@ -1,14 +1,14 @@
 # React Custom Calendar Heatmap
-## 목표
-현재 react-calendar-heatmap에는 svg 요소를 바꾸지 못함. hover되었을 때도 뭔가 액션이 있었으면 좋겠음
+## Goal
+Currently, react-calendar-heatmap doesn't allow changing svg elements. Plus, it would be nice to have some action when hovering.
 
-## 요구사항
-- 오늘을 기준으로 이전 1년의 요소를 생성한다.
-- 받은 데이터를 기준으로 5를 나눠 그라데이션을 준다 => 0 이상이면 일단 1단계를 줘야함
-- 단계가 주어지면 해당 숫자로나눠 그라데이션을 준다
-- 기간이 주어지면 해당 기간에 맞춰서 1년을 생성한다
-- 받은 svg가 있다면 해당 요소로 생성하고, 없으면 기본 요소를 렌더링한다
-- svg가 hover되면 값을 띄운다 => id 필요 혹은 index 사용
+## Requirements
+- Generate elements for the previous year based on today's date if there is no props about date.
+- Create a gradient based on 5 divisions of the received date => If it is above 0, it should be given at least the first level.
+- If levels are given, divide by that number to create the gradient.
+- If a period is given, create a year fitting that period.
+- If a received svg exists, create elements with it; otherwise, render default elements.
+- When svg is hovered, display the value => need id or use index => it should be changed value, date, etc.
 
 ## Props
 - level?: number
@@ -16,5 +16,5 @@
 - startDate?: Date
 
 ## Plan
-- Compound Component Pattern을 활용하여 날짜, 제목 등을 쉽게 선택가능하게
-- 환경에 제한적이지 않았으면 좋겠음 React에서도 추후 변경할 것
+- Use Compound Component Pattern to easily select date, title, ect.
+- Would like it not to be restricted to a specific environment
