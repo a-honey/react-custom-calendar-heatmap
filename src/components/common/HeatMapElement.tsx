@@ -1,3 +1,5 @@
+import "./HeatMapElement.css";
+
 import { HeatMapElementProps, SVGComponentProps } from "../../types";
 
 import DefaultElement from "../../assets/DefaultElement";
@@ -12,9 +14,20 @@ interface ElementProps extends HeatMapElementProps {
 const HeatMapElement = ({
   color = "#CCCCCC",
   size = 20,
+  value,
   SvgComponent = DefaultElement,
 }: ElementProps) => {
-  return <SvgComponent fill={color} size={size} />;
+  return (
+    <div
+      className="heatmap-element"
+      style={{
+        position: "relative",
+      }}
+    >
+      {value && <div className="hover-element">{value}</div>}
+      <SvgComponent fill={color} size={size} />
+    </div>
+  );
 };
 
 export default HeatMapElement;
