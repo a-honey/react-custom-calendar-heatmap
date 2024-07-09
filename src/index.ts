@@ -1,2 +1,2 @@
-export { default as Heatmap } from "./components/common/HeatMap";
-export { default as CalendarHeatmap } from "./components/calendar/CalendarHeatMap";
+export { default as Heatmap } from "./components/common/Heatmap";
+export { default as CalendarHeatmap } from "./components/calendar/CalendarHeatmap";

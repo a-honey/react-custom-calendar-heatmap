@@ -1,16 +1,16 @@
-import HeatMapElement from "./HeatMapElement";
-import { HeatMapProps } from "../../types";
+import HeatmapElement from "./HeatmapElement";
+import { HeatmapProps } from "../../types";
 import React from "react";
 import getGradientColor from "../../utils/getGradientColor";
 import getMaxValue from "../../utils/getMaxValue";
 
-const HeatMap = ({
+const Heatmap = ({
   values,
   depth = 5,
   gap,
   row = 7,
   SvgComponent,
-}: HeatMapProps) => {
+}: HeatmapProps) => {
   return (
     <div
       style={{
@@ -23,7 +23,7 @@ const HeatMap = ({
       }}
     >
       {values.map(({ value, hoverValue }, index) => (
-        <HeatMapElement
+        <HeatmapElement
           key={index}
           hoverValue={hoverValue}
           value={value}
@@ -39,4 +39,4 @@ const HeatMap = ({
   );
 };
 
-export default HeatMap;
+export default Heatmap;

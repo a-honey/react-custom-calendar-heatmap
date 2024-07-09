@@ -1,9 +1,9 @@
-import CalendarHeatMap from "../components/calendar/CalendarHeatMap";
+import CalendarHeatmap from "../components/calendar/CalendarHeatmap";
 import React from "react";
 
 export default {
-  title: "CalendarHeatMap",
-  component: CalendarHeatMap,
+  title: "CalendarHeatmap",
+  component: CalendarHeatmap,
 };
 
 const Template: React.FC = () => {
@@ -32,7 +32,7 @@ const Template: React.FC = () => {
     { value: 22, date: new Date("2024-07-09") },
   ];
 
-  return <CalendarHeatMap values={values} />;
+  return <CalendarHeatmap values={values} />;
 };
 
 export const Default = Template.bind({});

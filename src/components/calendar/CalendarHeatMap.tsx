@@ -1,35 +1,35 @@
 import Container from "./Container";
-import HeatMap from "../../components/common/HeatMap";
-import { HeatMapProps } from "types";
+import Heatmap from "../common/Heatmap";
+import { HeatmapProps } from "types";
 import MonthLabel from "./MonthLabel";
 import Months from "../../constants/Months";
 import React from "react";
 import WeekLabel from "./WeekLabel";
 import Weeks from "../../constants/Weeks";
 
-interface CalendarHeatMapElementProps {
+interface CalendarHeatmapElementProps {
   date: Date;
   value: number;
 }
 
-export interface CalendarHeatMapProps extends HeatMapProps {
-  values: CalendarHeatMapElementProps[];
+export interface CalendarHeatmapProps extends HeatmapProps {
+  values: CalendarHeatmapElementProps[];
   monthType?: keyof typeof Months;
   weekType?: keyof typeof Weeks;
 }
 
-const CalendarHeatMap = ({
+const CalendarHeatmap = ({
   values,
   depth,
   gap = 2,
   SvgComponent,
   monthType,
   weekType,
-}: CalendarHeatMapProps) => {
+}: CalendarHeatmapProps) => {
   const today = new Date();
   const currentYear = today.getFullYear();
 
-  const heatMapValues = Array.from({ length: 365 }, (_, index) => {
+  const heatmapValues = Array.from({ length: 365 }, (_, index) => {
     const currentDate = new Date(`${currentYear}-1-1`);
     currentDate.setDate(currentDate.getDate() + index);
 
@@ -55,10 +55,10 @@ const CalendarHeatMap = ({
       <div />
       <MonthLabel style={{ gridRow: "0", gridColumn: "1" }} type={monthType} />
       <WeekLabel style={{ gridRow: "1", gridColumn: "0" }} type={weekType} />
-      <HeatMap
+      <Heatmap
         style={{ gridRow: "1", gridColumn: "1" }}
         row={7}
-        values={heatMapValues}
+        values={heatmapValues}
         SvgComponent={SvgComponent}
         depth={depth}
         gap={gap}
@@ -67,4 +67,4 @@ const CalendarHeatMap = ({
   );
 };
 
-export default CalendarHeatMap;
+export default CalendarHeatmap;

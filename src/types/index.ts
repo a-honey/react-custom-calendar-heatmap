@@ -3,14 +3,14 @@ export interface SVGComponentProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-export interface HeatMapElementProps {
+export interface HeatmapElementProps {
   hoverValue?: string;
   value: number | null;
 }
-export interface HeatMapProps {
+export interface HeatmapProps {
   style?: React.CSSProperties;
   SvgComponent?: React.FC<SVGComponentProps>;
-  values: HeatMapElementProps[];
+  values: HeatmapElementProps[];
   gap?: number;
   depth?: number;
   col?: number;

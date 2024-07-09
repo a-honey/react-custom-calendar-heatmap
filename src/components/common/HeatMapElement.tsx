@@ -1,17 +1,17 @@
-import "./HeatMapElement.css";
+import "./HeatmapElement.css";
 
-import { HeatMapElementProps, SVGComponentProps } from "../../types";
+import { HeatmapElementProps, SVGComponentProps } from "../../types";
 
 import DefaultElement from "../../assets/DefaultElement";
 import React from "react";
 
-interface ElementProps extends HeatMapElementProps {
+interface ElementProps extends HeatmapElementProps {
   color?: string;
   size?: number;
   SvgComponent?: React.FC<SVGComponentProps>;
 }
 
-const HeatMapElement = ({
+const HeatmapElement = ({
   color = "#CCCCCC",
   size = 20,
   value,
@@ -30,4 +30,4 @@ const HeatMapElement = ({
   );
 };
 
-export default HeatMapElement;
+export default HeatmapElement;
