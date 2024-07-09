@@ -1,20 +1,76 @@
 # React Custom Calendar Heatmap
-## Goal
-Currently, react-calendar-heatmap doesn't allow changing svg elements. Plus, it would be nice to have some action when hovering.
 
-## Requirements
-- Generate elements for the previous year based on today's date if there is no props about date.
-- Create a gradient based on 5 divisions of the received date => If it is above 0, it should be given at least the first level.
-- If levels are given, divide by that number to create the gradient.
-- If a period is given, create a year fitting that period.
-- If a received svg exists, create elements with it; otherwise, render default elements.
-- When svg is hovered, display the value => need id or use index => it should be changed value, date, etc.
+A calendar heatmap component built on SVG, inspired by github's commit calendar graph. The component expands to size of container and is super configurable.
+
+[![npm version](https://badge.fury.io/js/react-custom-calendar-heatmap.svg)](https://badge.fury.io/js/react-custom-calendar-heatmap)
+[![Build Status](https://travis-ci.org/kevinsqi/react-custom-calendar-heatmap.svg?branch=master)](https://travis-ci.org/kevinsqi/react-custom-calendar-heatmap)
+[![bundle size](https://img.shields.io/bundlephobia/min/react-custom-calendar-heatmap.svg)](https://bundlephobia.com/result?p=react-custom-calendar-heatmap)
+
+![image](https://github.com/a-honey/react-custom-calendar-heatmap/assets/75254185/0810efa4-a88b-4c90-bd4f-96c1ce68a7f8)
+
+
+## Setup
+
+Install the npm module with npm, yarn or pnpm:
+
+```bash
+pnpm install react-custom-calendar-heatmap
+```
+
+## Usage
+
+Import the component:
+
+```javascript
+import CalendarHeatmap from 'react-custom-calendar-heatmap';
+```
+
+Import styles. You can directly import from the module, which requires a CSS loader:
+
+```javascript
+import 'react-custom-calendar-heatmap/dist/styles.css';
+```
+
+A CSS loader is included by default in create-react-app. If you don't have a CSS loader, you can simply [copy the stylesheet](src/styles/globals.css) into a file in your project and import it instead.
+
+Create a component with SVG:
+
+```javascript
+import React from "react";
+
+const DefaultElement = ({ ...props }) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect width="100%" height="100%" fill="current" />
+    </svg>
+  );
+};
+
+export default DefaultElement;
+```
+
+When setting the SVG's fill attribute, using "current" is crucial for conveying the color to its child elements. This approach ensures that the child elements inside the SVG inherit the color seamlessly from their parent element. Additionally, remember to pass props to the component as needed.
+
+To show a basic heatmap:
+
+```javascript
+<CalendarHeatmap
+  values={[
+    { date: '2024-07-09', value: 12 },
+    { date: '2024-07-10', value: 54 },
+    { date: '2024-07-11', value: 38 },
+    // ...and so on
+  ]}
+/>
+```
 
 ## Props
-- level?: number
-- endDate: Date
-- startDate?: Date
 
-## Plan
-- Use Compound Component Pattern to easily select date, title, ect.
-- Would like it not to be restricted to a specific environment
+| Name | IsRequired | Type | Description |
+| ---- | ---- | ---- | ----------- |
+| values | true | {date: Date, value: number} | |
+| SvgComponent | false | JSX.Element | |
+
+## License
+
+react-custom-calendar-heatmap is Copyright &copy; 2024 Ahyeon, Jung([@a-honey](https://github.com/a-honey)) and is released under an MIT License.
