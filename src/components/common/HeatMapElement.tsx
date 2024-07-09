@@ -1,5 +1,3 @@
-import "./HeatmapElement.css";
-
 import { HeatmapElementProps, SVGComponentProps } from "../../types";
 
 import DefaultElement from "../../assets/DefaultElement";
@@ -18,13 +16,12 @@ const HeatmapElement = ({
   SvgComponent = DefaultElement,
 }: ElementProps) => {
   return (
-    <div
-      className="heatmap-element"
-      style={{
-        position: "relative",
-      }}
-    >
-      {value && <div className="hover-element">{value}</div>}
+    <div className="heatmap-element">
+      {value === 0 ? (
+        <div className="heatmap-hover-element">"0"</div>
+      ) : (
+        value && <div className="heatmap-hover-element">{value}</div>
+      )}
       <SvgComponent fill={color} size={size} />
     </div>
   );

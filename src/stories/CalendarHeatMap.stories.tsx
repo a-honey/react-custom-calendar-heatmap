@@ -1,38 +1,43 @@
-import CalendarHeatmap from "../components/calendar/CalendarHeatmap";
+import "../styles/globals.css";
+
+import CalendarHeatmap, {
+  CalendarHeatmapProps,
+} from "../components/calendar/CalendarHeatmap";
+
+import CircleSvg from "./assets/CircleSvg";
+import CloverSvg from "./assets/CloverSvg";
 import React from "react";
+import { getCalendarValues } from "../utils/demo.utils";
 
 export default {
   title: "CalendarHeatmap",
   component: CalendarHeatmap,
 };
 
-const Template: React.FC = () => {
-  const values = [
-    { value: 10, date: new Date("2024-04-04") },
-    { value: 11, date: new Date("2024-04-12") },
-    { value: 15, date: new Date("2024-04-15") },
-    { value: 16, date: new Date("2024-04-20") },
-    { value: 10, date: new Date("2024-04-21") },
-    { value: 20, date: new Date("2024-04-22") },
-    { value: 10, date: new Date("2024-05-05") },
-    { value: 11, date: new Date("2024-05-12") },
-    { value: 15, date: new Date("2024-05-15") },
-    { value: 16, date: new Date("2024-05-20") },
-    { value: 10, date: new Date("2024-05-21") },
-    { value: 20, date: new Date("2024-05-22") },
-    { value: 10, date: new Date("2024-06-05") },
-    { value: 11, date: new Date("2024-06-12") },
-    { value: 15, date: new Date("2024-06-15") },
-    { value: 16, date: new Date("2024-06-20") },
-    { value: 10, date: new Date("2024-06-21") },
-    { value: 20, date: new Date("2024-06-22") },
-    { value: 10, date: new Date("2024-06-25") },
-    { value: 14, date: new Date("2024-06-28") },
-    { value: 33, date: new Date("2024-07-05") },
-    { value: 22, date: new Date("2024-07-09") },
-  ];
-
-  return <CalendarHeatmap values={values} />;
+const Template: React.FC<
+  { SvgComponent?: React.ComponentType } & CalendarHeatmapProps
+> = ({ SvgComponent, ...props }) => {
+  const values = getCalendarValues();
+  return (
+    <div style={{ width: "900px" }}>
+      <CalendarHeatmap {...props} values={values} SvgComponent={SvgComponent} />
+    </div>
+  );
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  value: getCalendarValues(),
+};
+
+export const WithCloverSvg = Template.bind({});
+WithCloverSvg.args = {
+  value: getCalendarValues(),
+  SvgComponent: CloverSvg,
+};
+
+export const WithCircleSvg = Template.bind({});
+WithCircleSvg.args = {
+  value: getCalendarValues(),
+  SvgComponent: CircleSvg,
+};

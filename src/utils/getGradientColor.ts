@@ -16,7 +16,7 @@ export default function getGradientColor({
 
   switch (currentDepth) {
     case 0:
-      return "#ccd6e3";
+      return "#fdddb8";
     case 1:
       return "#fdddb8";
     case 2:
@@ -24,7 +24,7 @@ export default function getGradientColor({
     case 3:
       return "#ff7a35";
     case 4:
-      return "#00FF00";
+      return "#FF7A35";
     default:
       return "#ccd6e3";
   }

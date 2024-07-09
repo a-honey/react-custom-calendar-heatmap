@@ -8,9 +8,11 @@ interface MonthLabelProps {
 
 const MonthLabel = ({ type = "enShort" }: MonthLabelProps) => {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)" }}>
+    <div className="month-container">
       {Months[type].map((month) => (
-        <div key={month}>{month}</div>
+        <div key={month} className="month-element">
+          {month}
+        </div>
       ))}
     </div>
   );

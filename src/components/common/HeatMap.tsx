@@ -7,21 +7,11 @@ import getMaxValue from "../../utils/getMaxValue";
 const Heatmap = ({
   values,
   depth = 5,
-  gap,
-  row = 7,
   SvgComponent,
+  className,
 }: HeatmapProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flexWrap: "wrap",
-        gap,
-        height: `${23 * 7}px`,
-        maxWidth: `${Math.ceil(365 / 7)}px`,
-      }}
-    >
+    <div className={`heatmap-container ${className}`}>
       {values.map(({ value, hoverValue }, index) => (
         <HeatmapElement
           key={index}

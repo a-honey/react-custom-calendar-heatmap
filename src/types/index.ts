@@ -8,6 +8,7 @@ export interface HeatmapElementProps {
   value: number | null;
 }
 export interface HeatmapProps {
+  className?: string;
   style?: React.CSSProperties;
   SvgComponent?: React.FC<SVGComponentProps>;
   values: HeatmapElementProps[];

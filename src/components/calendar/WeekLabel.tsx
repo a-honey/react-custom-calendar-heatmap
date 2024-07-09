@@ -8,9 +8,11 @@ interface WeekLabelProps {
 
 const WeekLabel = ({ type = "enShort" }: WeekLabelProps) => {
   return (
-    <div style={{ display: "grid", gridTemplateRows: "repeat(7, 1fr)" }}>
+    <div className="week-container">
       {Weeks[type].map((week) => (
-        <div key={week}>{week}</div>
+        <div key={week} className="week-element">
+          {week}
+        </div>
       ))}
     </div>
   );
