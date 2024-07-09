@@ -1,6 +1,6 @@
 # React Custom Calendar Heatmap
 
-A calendar heatmap component built on SVG, inspired by github's commit calendar graph. The component expands to size of container and is super configurable.
+A heatmap library designed for customizable SVG elements, offering flexible configuration options and interactive hover actions to enhance data visualization. It is currently under development and expected to include features for seamless integration and extensive customization.🚀
 
 [![npm version](https://badge.fury.io/js/react-custom-calendar-heatmap.svg)](https://badge.fury.io/js/react-custom-calendar-heatmap)
 [![Build Status](https://travis-ci.org/kevinsqi/react-custom-calendar-heatmap.svg?branch=master)](https://travis-ci.org/kevinsqi/react-custom-calendar-heatmap)
