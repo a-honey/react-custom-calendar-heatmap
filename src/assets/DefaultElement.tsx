@@ -1,20 +1,8 @@
 import React from "react";
-import { SVGComponentProps } from "types";
 
-const DefaultElement = ({
-  size = 20,
-  fill = "#CCCCCC",
-  ...props
-}: SVGComponentProps) => {
+const DefaultElement = ({ ...props }) => {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      xmlns="http://www.w3.org/2000/svg"
-      fill={fill}
-      {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect width="100%" height="100%" fill="current" />
     </svg>
   );

@@ -1,12 +1,12 @@
-import Container from "./Container";
 import MonthLabel from "./MonthLabel";
+import React from "react";
 import WeekLabel from "./WeekLabel";
 
 interface CustomCalendarHeatmapProps {
   children: React.ReactNode;
 }
 const CustomCalendarHeatmap = ({ children }: CustomCalendarHeatmapProps) => {
-  return <Container>{children}</Container>;
+  return <div>{children}</div>;
 };
 
 CustomCalendarHeatmap.Month = <MonthLabel />;
