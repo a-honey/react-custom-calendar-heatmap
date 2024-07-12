@@ -1,3 +1,5 @@
+import React from "react";
+
 const CircleSvg = ({ ...props }) => {
   return (
     <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" {...props}>
