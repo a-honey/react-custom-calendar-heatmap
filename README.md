@@ -8,7 +8,6 @@ A heatmap library designed for customizable SVG elements, offering flexible conf
 
 ![image](https://github.com/a-honey/react-custom-calendar-heatmap/assets/75254185/0810efa4-a88b-4c90-bd4f-96c1ce68a7f8)
 
-
 ## Setup
 
 Install the npm module with npm, yarn or pnpm:
@@ -22,13 +21,13 @@ pnpm install react-custom-calendar-heatmap
 Import the component:
 
 ```javascript
-import CalendarHeatmap from 'react-custom-calendar-heatmap';
+import CalendarHeatmap from "react-custom-calendar-heatmap";
 ```
 
 Import styles. You can directly import from the module, which requires a CSS loader:
 
 ```javascript
-import 'react-custom-calendar-heatmap/dist/styles.css';
+import "react-custom-calendar-heatmap/dist/styles.css";
 ```
 
 A CSS loader is included by default in create-react-app. If you don't have a CSS loader, you can simply [copy the stylesheet](src/styles/globals.css) into a file in your project and import it instead.
@@ -56,9 +55,9 @@ To show a basic heatmap:
 ```javascript
 <CalendarHeatmap
   values={[
-    { date: '2024-07-09', value: 12 },
-    { date: '2024-07-10', value: 54 },
-    { date: '2024-07-11', value: 38 },
+    { date: "2024-07-09", value: 12 },
+    { date: "2024-07-10", value: 54 },
+    { date: "2024-07-11", value: 38 },
     // ...and so on
   ]}
 />
@@ -66,10 +65,11 @@ To show a basic heatmap:
 
 ## Props
 
-| Name | IsRequired | Type | Description |
-| ---- | ---- | ---- | ----------- |
-| values | true | {date: Date, value: number} | |
-| SvgComponent | false | JSX.Element | |
+| Name         | IsRequired | Type                        | Description                                                                                                                           |
+| ------------ | ---------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| values       | true       | {date: Date, value: number} | An array of objects, each containing a date and a numerical value.                                                                    |
+| SvgComponent | false      | JSX.Element                 | An optional SVG component to be displayed alongside the gradient.                                                                     |
+| mainColor    | false      | string                      | The base color code (hexadecimal string) for generating the gradient. The gradient will start from this color and transition to gray. |
 
 ## License
 

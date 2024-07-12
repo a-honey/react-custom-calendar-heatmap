@@ -24,6 +24,8 @@ const CalendarHeatmap = ({
   SvgComponent,
   monthType,
   weekType,
+  mainColor,
+  size,
 }: CalendarHeatmapProps) => {
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -48,12 +50,14 @@ const CalendarHeatmap = ({
       <MonthLabel type={monthType} />
       <WeekLabel type={weekType} />
       <Heatmap
+        mainColor={mainColor}
         className={".calendar-heatmap"}
         row={7}
         values={heatmapValues}
         SvgComponent={SvgComponent}
         depth={depth}
         gap={gap}
+        size={size}
       />
     </div>
   );
