@@ -1,7 +1,7 @@
 import HeatmapElement from "./HeatmapElement";
 import { HeatmapProps } from "../../types";
 import React from "react";
-import getGradientColor from "../../utils/getGradientColor";
+import getElementColorInfo from "../../utils/getElementColorInfo";
 import getMaxValue from "../../utils/getMaxValue";
 
 const Heatmap = ({
@@ -9,22 +9,30 @@ const Heatmap = ({
   depth = 5,
   SvgComponent,
   className,
+  mainColor,
+  size,
 }: HeatmapProps) => {
   return (
     <div className={`heatmap-container ${className}`}>
-      {values.map(({ value, hoverValue }, index) => (
-        <HeatmapElement
-          key={index}
-          hoverValue={hoverValue}
-          value={value}
-          SvgComponent={SvgComponent}
-          color={getGradientColor({
-            value,
-            depth,
-            maxValue: getMaxValue({ values }),
-          })}
-        />
-      ))}
+      {values.map(({ value, hoverValue }, index) => {
+        const { className, color } = getElementColorInfo({
+          value,
+          depth,
+          mainColor,
+          maxValue: getMaxValue({ values }),
+        });
+        return (
+          <HeatmapElement
+            size={size}
+            className={className}
+            key={index}
+            hoverValue={hoverValue}
+            value={value}
+            SvgComponent={SvgComponent}
+            color={color}
+          />
+        );
+      })}
     </div>
   );
 };

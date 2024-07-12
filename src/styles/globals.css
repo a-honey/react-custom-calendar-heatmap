@@ -39,6 +39,31 @@ Heatmap
   display: flex;
 }
 
+/*
+
+Color Set
+*/
+
+.heatmap-element-depth-empty {
+}
+
+.heatmap-element-depth-0 {
+}
+
+.heatmap-element-depth-1 {
+}
+
+.heatmap-element-depth-2 {
+}
+
+.heatmap-element-depth-3 {
+}
+
+.heatmap-element-depth-4 {
+}
+
+.heatmap-element-depth-5 {
+}
 /* 
 
 CalendarHeatmap

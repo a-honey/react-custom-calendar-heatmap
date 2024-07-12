@@ -14,6 +14,9 @@ export interface HeatmapProps {
   values: HeatmapElementProps[];
   gap?: number;
   depth?: number;
+  size?: number;
   col?: number;
   row?: number;
+  mainColor?: string;
+  baseColor?: string;
 }
