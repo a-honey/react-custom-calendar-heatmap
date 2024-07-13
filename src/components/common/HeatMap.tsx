@@ -8,6 +8,7 @@ const Heatmap = ({
   values,
   depth = 5,
   SvgComponent,
+  HoverComponent,
   className,
   mainColor,
   size,
@@ -27,6 +28,7 @@ const Heatmap = ({
             className={className}
             key={index}
             hoverValue={hoverValue}
+            HoverComponent={HoverComponent}
             value={value}
             SvgComponent={SvgComponent}
             color={color}

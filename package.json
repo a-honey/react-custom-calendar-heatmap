@@ -1,10 +1,13 @@
 {
   "name": "react-custom-calendar-heatmap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a heatmap library for Customizable SVG Elements and hover actions",
   "repository": {
     "type": "git",
     "url": "https://github.com/a-honey/react-custom-calendar-heatmap"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
