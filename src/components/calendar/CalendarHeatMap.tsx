@@ -22,6 +22,7 @@ const CalendarHeatmap = ({
   depth,
   gap = 2,
   SvgComponent,
+  HoverComponent,
   monthType,
   weekType,
   mainColor,
@@ -50,6 +51,7 @@ const CalendarHeatmap = ({
       <MonthLabel type={monthType} />
       <WeekLabel type={weekType} />
       <Heatmap
+        HoverComponent={HoverComponent}
         mainColor={mainColor}
         className={".calendar-heatmap"}
         row={7}

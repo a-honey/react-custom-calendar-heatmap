@@ -11,6 +11,7 @@ export interface HeatmapProps {
   className?: string;
   style?: React.CSSProperties;
   SvgComponent?: React.FC<SVGComponentProps>;
+  HoverComponent?: React.FC;
   values: HeatmapElementProps[];
   gap?: number;
   depth?: number;
@@ -19,4 +20,9 @@ export interface HeatmapProps {
   row?: number;
   mainColor?: string;
   baseColor?: string;
+}
+
+export interface HoverComponentProps {
+  className: string;
+  value: string | number;
 }

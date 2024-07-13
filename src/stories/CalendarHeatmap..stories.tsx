@@ -46,3 +46,14 @@ WithCircleSvg.args = {
   mainColor: "#FF7A35",
   size: 10,
 };
+
+export const WithCircleSvgAndHover: any = Template.bind({});
+WithCircleSvgAndHover.args = {
+  value: getCalendarValues(),
+  SvgComponent: CircleSvg,
+  mainColor: "#FF7A35",
+  size: 15,
+  HoverComponent: (
+    <div style={{ width: 300, height: 200, backgroundColor: "yellow" }} />
+  ),
+};
