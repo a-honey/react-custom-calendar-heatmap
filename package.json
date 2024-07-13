@@ -7,7 +7,7 @@
     "url": "https://github.com/a-honey/react-custom-calendar-heatmap"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@a-honey:registry": "https://npm.pkg.github.com"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
