@@ -27,6 +27,7 @@ const CalendarHeatmap = ({
   weekType,
   mainColor,
   size,
+  colorSet,
 }: CalendarHeatmapProps) => {
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -60,6 +61,7 @@ const CalendarHeatmap = ({
         depth={depth}
         gap={gap}
         size={size}
+        colorSet={colorSet}
       />
     </div>
   );

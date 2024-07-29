@@ -12,6 +12,7 @@ const Heatmap = ({
   className,
   mainColor,
   size,
+  colorSet,
 }: HeatmapProps) => {
   return (
     <div className={`heatmap-container ${className}`}>
@@ -21,6 +22,7 @@ const Heatmap = ({
           depth,
           mainColor,
           maxValue: getMaxValue({ values }),
+          colorSet,
         });
         return (
           <HeatmapElement
@@ -31,7 +33,7 @@ const Heatmap = ({
             HoverComponent={HoverComponent}
             value={value}
             SvgComponent={SvgComponent}
-            color={color}
+            color={colorSet && value === 0 ? colorSet[0] : color}
           />
         );
       })}

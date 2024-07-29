@@ -30,8 +30,8 @@ dependencies:
     specifier: ^18.3.1
     version: 18.3.1
   react-custom-calendar-heatmap:
-    specifier: ^1.0.1
-    version: 1.0.1(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^1.0.5
+    version: 1.0.5(react-dom@18.3.1)(react@18.3.1)
   react-dom:
     specifier: ^18.3.1
     version: 18.3.1(react@18.3.1)
@@ -8751,8 +8751,8 @@ packages:
       whatwg-fetch: 3.6.20
     dev: false
 
-  /react-custom-calendar-heatmap@1.0.1(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-ij4AW7DJWLXqKI4eK4Meg1UFoN6w5biB+fP6beSQWoeZz38XlGgo7Tv9UYXEpr+jLmuNZZPyYn5ZJo7prRgWqg==}
+  /react-custom-calendar-heatmap@1.0.5(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-16TZszhUxHmP/zKH2+9/CmXy5eqsDt5zelYmR5t1rHZokDcUG7GqAy1rjG1mwuP7ynELdx9mBrgK4rJgD8jYOg==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
