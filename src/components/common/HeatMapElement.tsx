@@ -16,7 +16,7 @@ interface ElementProps extends HeatmapElementProps {
 }
 
 const HeatmapElement = ({
-  color = "#CCCCCC",
+  color,
   size = 20,
   value,
   className,
@@ -24,7 +24,12 @@ const HeatmapElement = ({
   HoverComponent,
 }: ElementProps) => {
   return (
-    <div className="heatmap-element">
+    <div
+      className="heatmap-element"
+      onClick={() => {
+        console.log(value, color);
+      }}
+    >
       {HoverComponent &&
         (value === 0 ? (
           <HoverComponent

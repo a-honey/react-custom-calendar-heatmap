@@ -20,6 +20,7 @@ export interface HeatmapProps {
   row?: number;
   mainColor?: string;
   baseColor?: string;
+  colorSet?: string[];
 }
 
 export interface HoverComponentProps {

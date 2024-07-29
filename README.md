@@ -70,6 +70,7 @@ To show a basic heatmap:
 | values       | true       | {date: Date, value: number} | An array of objects, each containing a date and a numerical value.                                                                    |
 | SvgComponent | false      | JSX.Element                 | An optional SVG component to be displayed alongside the gradient.                                                                     |
 | mainColor    | false      | string                      | The base color code (hexadecimal string) for generating the gradient. The gradient will start from this color and transition to gray. |
+| colorSet     | false      | string[]                    | The color set with depth                                                                                                              |
 
 ## License
 
