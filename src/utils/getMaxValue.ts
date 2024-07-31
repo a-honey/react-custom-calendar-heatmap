@@ -1,4 +1,4 @@
-import { HeatmapProps } from "types";
+import { HeatmapProps } from "../types";
 
 export default function getMaxValue({ values }: Pick<HeatmapProps, "values">) {
   if (values.length === 0) return 0;

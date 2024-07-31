@@ -1,8 +1,8 @@
-import HeatmapElement from "./HeatmapElement";
+import HeatmapElement from "./HeatmapElement.js";
 import { HeatmapProps } from "../../types";
 import React from "react";
-import getElementColorInfo from "../../utils/getElementColorInfo";
-import getMaxValue from "../../utils/getMaxValue";
+import getElementColorInfo from "../../utils/getElementColorInfo.js";
+import getMaxValue from "../../utils/getMaxValue.js";
 
 const Heatmap = ({
   values,

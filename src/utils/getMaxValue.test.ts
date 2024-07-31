@@ -1,4 +1,4 @@
-import { HeatmapProps } from "types";
+import { HeatmapProps } from "../types";
 import getMaxValue from "./getMaxValue";
 
 describe("values가 들어오면 최댓값을 반환하는 getMaxValue", () => {

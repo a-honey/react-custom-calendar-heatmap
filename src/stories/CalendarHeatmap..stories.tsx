@@ -16,9 +16,7 @@ export default {
 
 const Template: React.FC<
   { SvgComponent?: React.ComponentType } & CalendarHeatmapProps
-> = ({ SvgComponent, ...props }) => {
-  const values = getCalendarValues();
-
+> = ({ SvgComponent, values, ...props }) => {
   return (
     <div style={{ width: "900px" }}>
       <CalendarHeatmap {...props} values={values} SvgComponent={SvgComponent} />
@@ -28,12 +26,12 @@ const Template: React.FC<
 
 export const Default: any = Template.bind({});
 Default.args = {
-  value: getCalendarValues(),
+  values: getCalendarValues(),
 };
 
 export const WithCloverSvg: any = Template.bind({});
 WithCloverSvg.args = {
-  value: getCalendarValues(),
+  values: getCalendarValues(),
   SvgComponent: CloverSvg,
   mainColor: "#000000",
   size: 20,
@@ -41,7 +39,7 @@ WithCloverSvg.args = {
 
 export const WithCircleSvg: any = Template.bind({});
 WithCircleSvg.args = {
-  value: getCalendarValues(),
+  values: getCalendarValues(),
   SvgComponent: CircleSvg,
   mainColor: "#FF7A35",
   size: 10,
@@ -49,7 +47,7 @@ WithCircleSvg.args = {
 
 export const WithCircleSvgAndHover: any = Template.bind({});
 WithCircleSvgAndHover.args = {
-  value: getCalendarValues(),
+  values: getCalendarValues(),
   SvgComponent: CircleSvg,
   mainColor: "#FF7A35",
   size: 15,
@@ -58,9 +56,38 @@ WithCircleSvgAndHover.args = {
 
 export const WithColorSet: any = Template.bind({});
 WithColorSet.args = {
-  value: getCalendarValues(),
+  values: [
+    {
+      value: 60,
+      date: new Date("2024-07-26"),
+    },
+    {
+      value: 40,
+      date: new Date("2024-07-27"),
+    },
+    {
+      value: 30,
+      date: new Date("2024-07-28"),
+    },
+    {
+      value: 20,
+      date: new Date("2024-07-29"),
+    },
+    {
+      value: 1,
+      date: new Date("2024-07-30"),
+    },
+    {
+      value: 0,
+      date: new Date("2024-07-31"),
+    },
+    {
+      value: 70,
+      date: new Date("2024-08-01"),
+    },
+  ],
   SvgComponent: CircleSvg,
   depth: 4,
-  colorSet: ["#E0E7EE", "#FDDDB8", "#FFC07F", "#FFA55C", "#FF7A35"],
+  colorSet: ["#E0E7EE", "#17990b", "#ffd000", "#ff7300", "#ff0000"],
   size: 15,
 };

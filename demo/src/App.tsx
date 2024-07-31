@@ -36,7 +36,7 @@ function App() {
       <CalendarHeatmap
         weekType="koShort"
         values={values}
-        mainColor="#000000"
+        colorSet={["#E0E7EE", "#FDDDB8", "#FFC07F", "#FFA55C", "#FF7A35"]}
         SvgComponent={SvgComponent}
       />
     </div>

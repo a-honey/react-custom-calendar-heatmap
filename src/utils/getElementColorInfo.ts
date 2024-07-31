@@ -17,7 +17,7 @@ export default function getElementColorInfo({
   maxValue,
   colorSet,
 }: getElementColorInfoProps) {
-  if (!value)
+  if (!value || value === 0)
     return {
       className: "heatmap-element-depth-empty",
       color: colorSet ? colorSet[0] : baseColor,
@@ -28,6 +28,12 @@ export default function getElementColorInfo({
 
   const gradientColorSet = getGradientColorSet({ mainColor, depth });
 
+  if (currentDepth === 0 && value > 0) {
+    return {
+      className: `heatmap-element-depth-1`,
+      color: colorSet ? colorSet[1] : gradientColorSet[1],
+    };
+  }
   return {
     className: `heatmap-element-depth-${currentDepth}`,
     color: colorSet ? colorSet[currentDepth] : gradientColorSet[currentDepth],
