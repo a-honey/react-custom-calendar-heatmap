@@ -26,15 +26,9 @@ function getMonday(d: any) {
 
 const CalendarHeatmap = ({
   values,
-  depth,
-  gap = 2,
-  SvgComponent,
-  HoverComponent,
   monthType,
   weekType,
-  mainColor,
-  size,
-  colorSet,
+  ...props
 }: CalendarHeatmapProps) => {
   const today = new Date();
 
@@ -60,16 +54,10 @@ const CalendarHeatmap = ({
       <MonthLabel type={monthType} />
       <WeekLabel type={weekType} />
       <Heatmap
-        HoverComponent={HoverComponent}
-        mainColor={mainColor}
-        className={".calendar-heatmap"}
+        className={"calendar-heatmap"}
         row={7}
         values={heatmapValues}
-        SvgComponent={SvgComponent}
-        depth={depth}
-        gap={gap}
-        size={size}
-        colorSet={colorSet}
+        {...props}
       />
     </div>
   );
