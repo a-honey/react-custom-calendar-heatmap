@@ -1,4 +1,4 @@
-import Heatmap from "../common/Heatmap";
+import Heatmap from "../common/HeatMap";
 import { HeatmapProps } from "types";
 import MonthLabel from "./MonthLabel";
 import Months from "../../constants/Months";
@@ -30,11 +30,10 @@ const CalendarHeatmap = ({
   colorSet,
 }: CalendarHeatmapProps) => {
   const today = new Date();
-  const currentYear = today.getFullYear();
 
   const heatmapValues = Array.from({ length: 365 }, (_, index) => {
-    const currentDate = new Date(`${currentYear}-1-1`);
-    currentDate.setDate(currentDate.getDate() + index);
+    const currentDate = new Date(today);
+    currentDate.setDate(currentDate.getDate() - (364 - index));
 
     const matchingValue = values.find((item) => {
       const itemDate = new Date(item.date);
