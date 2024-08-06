@@ -17,6 +17,13 @@ export interface CalendarHeatmapProps extends HeatmapProps {
   weekType?: keyof typeof Weeks;
 }
 
+function getMonday(d: any) {
+  d = new Date(d);
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  return new Date(d.setDate(diff));
+}
+
 const CalendarHeatmap = ({
   values,
   depth,
@@ -31,9 +38,11 @@ const CalendarHeatmap = ({
 }: CalendarHeatmapProps) => {
   const today = new Date();
 
+  const startDate = getMonday(today);
+
   const heatmapValues = Array.from({ length: 365 }, (_, index) => {
-    const currentDate = new Date(today);
-    currentDate.setDate(currentDate.getDate() - (364 - index));
+    const currentDate = new Date(startDate);
+    currentDate.setDate(startDate.getDate() - (364 - index));
 
     const matchingValue = values.find((item) => {
       const itemDate = new Date(item.date);
