@@ -1,4 +1,4 @@
-import Heatmap from "../common/Heatmap";
+import Heatmap from "../common/HeatMap";
 import { HeatmapProps } from "types";
 import MonthLabel from "./MonthLabel";
 import Months from "../../constants/Months";
@@ -17,24 +17,26 @@ export interface CalendarHeatmapProps extends HeatmapProps {
   weekType?: keyof typeof Weeks;
 }
 
+function getMonday(d: any) {
+  d = new Date(d);
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  return new Date(d.setDate(diff));
+}
+
 const CalendarHeatmap = ({
   values,
-  depth,
-  gap = 2,
-  SvgComponent,
-  HoverComponent,
   monthType,
   weekType,
-  mainColor,
-  size,
-  colorSet,
+  ...props
 }: CalendarHeatmapProps) => {
   const today = new Date();
-  const currentYear = today.getFullYear();
+
+  const startDate = getMonday(today);
 
   const heatmapValues = Array.from({ length: 365 }, (_, index) => {
-    const currentDate = new Date(`${currentYear}-1-1`);
-    currentDate.setDate(currentDate.getDate() + index);
+    const currentDate = new Date(startDate);
+    currentDate.setDate(startDate.getDate() - (364 - index));
 
     const matchingValue = values.find((item) => {
       const itemDate = new Date(item.date);
@@ -52,16 +54,10 @@ const CalendarHeatmap = ({
       <MonthLabel type={monthType} />
       <WeekLabel type={weekType} />
       <Heatmap
-        HoverComponent={HoverComponent}
-        mainColor={mainColor}
-        className={".calendar-heatmap"}
+        className={"calendar-heatmap"}
         row={7}
         values={heatmapValues}
-        SvgComponent={SvgComponent}
-        depth={depth}
-        gap={gap}
-        size={size}
-        colorSet={colorSet}
+        {...props}
       />
     </div>
   );

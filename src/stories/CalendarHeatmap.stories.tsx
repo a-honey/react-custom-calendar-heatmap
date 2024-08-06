@@ -2,7 +2,7 @@ import "../styles/globals.css";
 
 import CalendarHeatmap, {
   CalendarHeatmapProps,
-} from "../components/calendar/CalendarHeatmap";
+} from "../components/calendar/CalendarHeatMap";
 
 import CircleSvg from "./assets/CircleSvg";
 import CloverSvg from "./assets/CloverSvg";
