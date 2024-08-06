@@ -19,15 +19,11 @@ export interface CalendarHeatmapProps extends HeatmapProps {
 
 const CalendarHeatmap = ({
   values,
-  depth,
-  gap = 2,
   SvgComponent,
   HoverComponent,
   monthType,
   weekType,
-  mainColor,
-  size,
-  colorSet,
+  ...props
 }: CalendarHeatmapProps) => {
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -53,15 +49,11 @@ const CalendarHeatmap = ({
       <WeekLabel type={weekType} />
       <Heatmap
         HoverComponent={HoverComponent}
-        mainColor={mainColor}
         className={".calendar-heatmap"}
         row={7}
         values={heatmapValues}
         SvgComponent={SvgComponent}
-        depth={depth}
-        gap={gap}
-        size={size}
-        colorSet={colorSet}
+        {...props}
       />
     </div>
   );

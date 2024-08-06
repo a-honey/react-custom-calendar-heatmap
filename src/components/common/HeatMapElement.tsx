@@ -5,6 +5,7 @@ import {
 } from "../../types";
 
 import DefaultElement from "../../assets/DefaultElement";
+import HoverElement from "./HoverElement";
 import React from "react";
 
 interface ElementProps extends HeatmapElementProps {
@@ -22,6 +23,7 @@ const HeatmapElement = ({
   className,
   SvgComponent = DefaultElement,
   HoverComponent,
+  hoverValue,
 }: ElementProps) => {
   return (
     <div
@@ -31,17 +33,13 @@ const HeatmapElement = ({
       }}
     >
       {HoverComponent &&
-        (value === 0 ? (
-          <HoverComponent
-            className={`heatmap-hover-element ${className}`}
-            value={"0"}
-          />
+        (value === 0 && hoverValue ? (
+          <div />
         ) : (
           value && (
-            <HoverComponent
-              className={`heatmap-hover-element ${className}`}
-              value={value}
-            />
+            <div className={`heatmap-hover-element ${className}`}>
+              <HoverElement label={hoverValue} value={value} />
+            </div>
           )
         ))}
       <SvgComponent fill={color} width={size} />

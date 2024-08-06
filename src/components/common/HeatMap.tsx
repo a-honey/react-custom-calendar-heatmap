@@ -1,18 +1,16 @@
-import HeatmapElement from "./HeatmapElement.js";
+import HeatmapElement from "./HeatmapElement";
 import { HeatmapProps } from "../../types";
 import React from "react";
-import getElementColorInfo from "../../utils/getElementColorInfo.js";
-import getMaxValue from "../../utils/getMaxValue.js";
+import getElementColorInfo from "../../utils/getElementColorInfo";
+import getMaxValue from "../../utils/getMaxValue";
 
 const Heatmap = ({
   values,
   depth = 5,
-  SvgComponent,
-  HoverComponent,
   className,
   mainColor,
-  size,
   colorSet,
+  ...props
 }: HeatmapProps) => {
   return (
     <div className={`heatmap-container ${className}`}>
@@ -26,14 +24,12 @@ const Heatmap = ({
         });
         return (
           <HeatmapElement
-            size={size}
             className={className}
             key={index}
             hoverValue={hoverValue}
-            HoverComponent={HoverComponent}
             value={value}
-            SvgComponent={SvgComponent}
             color={colorSet && value === 0 ? colorSet[0] : color}
+            {...props}
           />
         );
       })}

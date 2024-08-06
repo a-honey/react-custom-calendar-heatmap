@@ -11,7 +11,7 @@ export function getCalendarValues() {
       continue;
     }
 
-    const randomValue = Math.floor(Math.random() * 50);
+    const randomValue = Math.floor(Math.random() * 500);
 
     values.push({
       value: randomValue,
