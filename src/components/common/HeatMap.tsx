@@ -1,4 +1,4 @@
-import HeatmapElement from "./HeatmapElement";
+import HeatmapElement from "./HeatMapElement";
 import { HeatmapProps } from "../../types";
 import React from "react";
 import getElementColorInfo from "../../utils/getElementColorInfo";

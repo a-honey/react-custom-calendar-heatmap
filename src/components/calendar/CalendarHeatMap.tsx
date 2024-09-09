@@ -1,5 +1,5 @@
 import Heatmap from "../common/Heatmap";
-import { HeatmapProps } from "types";
+import { HeatmapProps } from "../../types";
 import MonthLabel from "./MonthLabel";
 import Months from "../../constants/Months";
 import React from "react";
