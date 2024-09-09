@@ -27,7 +27,7 @@ const HeatmapElement = ({
 }: ElementProps) => {
   return (
     <div
-      className="heatmap-element"
+      className={`heatmap-element ${className}`}
       onClick={() => {
         console.log(value, color);
       }}
